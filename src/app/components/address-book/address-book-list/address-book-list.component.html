@@ -1,0 +1,8 @@
+<h2>
+    Address Book
+    <button [routerLink]="['/addressbookadd']" style="float: right;">Add</button>
+</h2>
+<app-address-book-table 
+    [employeesInfo]="(employeeInfoList$ | async)['employeesInfo']"
+    (deleteEmployee)="onDeleteEmployee($event)"
+></app-address-book-table>

@@ -1,0 +1,33 @@
+<div>
+    <div>
+        <label for="sortBy">Sort By </label>
+        <select name="sortBy" id="sortBy" [(ngModel)]="sortBy">
+            <option *ngFor="let field of fields" (value)="field">{{field}}</option>
+        </select>
+    </div>
+    <div>
+        <label for="searchOn">Search On </label>
+        <select name="searchOn" id="searchOn" [(ngModel)]="searchOn">
+            <option *ngFor="let field of fields" (value)="field">{{field}}</option>
+        </select>
+        <input id="search" type="text" [(ngModel)]="searchBy">
+    </div>
+    <br>
+</div>
+
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Department</th>
+        <th>Phone Number</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let emp of onSortSearchBy(sortBy, searchOn, searchBy)">
+        <td>{{emp.firstName}}</td>
+        <td>{{emp.lastName}}</td>
+        <td>{{emp.department}}</td>
+        <td>{{emp.phone}}</td>
+        <td><button (click)="onEmployeeDelete(emp.id)">Delete</button></td>
+    </tr>
+</table>

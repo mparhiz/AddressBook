@@ -1,0 +1,26 @@
+<form [formGroup]="addressBookForm" (ngSubmit)="onSave(addressBookForm.value)" class="form">
+    <div>
+        <label for="firstName">First Name </label>
+        *<input id="firstName" type="text" formControlName="firstName" required>
+    </div>
+
+    <div>
+        <label for="lastName">Last Name </label>
+        *<input id="lastName" type="text" formControlName="lastName" required>
+    </div>
+
+    <div>
+        <label for="department">Department </label>
+        *<input id="department" type="text" formControlName="department" required>
+    </div>
+
+    <div>
+        <label for="phone">Phone </label>
+        *<input id="phone" type="text" formControlName="phone" required>
+    </div>
+    
+    <div>
+        <button class="button" type="submit">Save</button>
+        <button [routerLink]="['/addressbooklist']">Cancel</button>
+    </div>
+</form>
